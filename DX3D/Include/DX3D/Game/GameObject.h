@@ -1,0 +1,62 @@
+// the game object where you connect components or generate a class based on this
+
+#pragma once
+#include <DX3D/Core/Common.h>
+#include <DX3D/Core/Identifiable.h>
+#include <DX3D/Game/Component.h>
+
+#include <unordered_map>
+
+namespace dx3d
+{
+	class GameObject : public Identifiable
+	{
+		dx3d_typeid(GameObject)
+	public:
+		explicit GameObject(const GameObjectDesc& desc);
+
+		template <typename T>
+		T* createOrGetComponent() requires IsRegistered<Component, T>
+		{
+			auto c = getComponent<T>();
+			if (c) return c;// if there exist a component return it else create one, used for objects that NEEDS a component
+			
+			UniquePtr<Component> cp =
+				std::make_unique<T>(ComponentDesc
+					{
+					{m_logger},
+					*this,
+					m_world
+					});
+			
+			return static_cast<T*>(createComponentInternal(cp));
+		}
+
+		
+		template <typename T>
+		T* getComponent() requires IsRegistered<Component, T>
+		{
+			return static_cast<T*>(getComponentInternal(T::GetTypeId()));
+		}
+
+		TransformComponent& getTransform() noexcept;
+		World& getWorld() noexcept;
+		InputSystem& getInputSystem() noexcept;
+	protected:
+		virtual void onCreate() {}
+		virtual void onUpdate(f32 deltaTime) {}	
+
+		//testing code here
+		virtual void onDestroy() {}
+	private:
+		Component* createComponentInternal(UniquePtr<Component>& component);
+		Component* getComponentInternal(size_t id);
+	private:
+		std::unordered_map<size_t, UniquePtr<Component>> m_components{};
+		TransformComponent* m_transform{};
+		GameContext m_gameContext;
+		World& m_world;	
+		friend class World;
+	};
+}
+
