@@ -2,6 +2,8 @@
 
 SphereObj::SphereObj(const dx3d::GameObjectDesc& desc): dx3d::GameObject(desc)
 {
+	// the sphere object
+
 }
 
 SphereObj::~SphereObj()
@@ -11,13 +13,13 @@ SphereObj::~SphereObj()
  void SphereObj::onCreate()
 {
 	 createOrGetComponent<dx3d::CircleComponent>();
-	 srand((unsigned int)time(NULL));
+	// random bounce and stuff
 	 auto pos = getTransform().getPosition();
 
 	 auto x = pos.x;
 	 auto y = pos.y;
 	 auto z = pos.z;
-	 speed = (rand() % 4) + 1;
+	 speed = (rand() % 9) + 1;
 	 x = (rand() % 4) + 1;
 	 y = (rand() % 4) + 1;
 	 getTransform().setScale({ 0.5f,0.5f,0.5f });

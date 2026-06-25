@@ -4,14 +4,14 @@
 #include <DX3D/All.h>
 #include <memory>
 #include <vector>
-#include <unordered_map>
+#include <unordered_map> // unordered map for the command registry
 #include <DX3D/Input/commandHandler.h>
 
-//add command and sphere obj hee
+
 class SphereObj;
 
 
-// main game loop i think
+// main game loop 
 class MainGame : public dx3d::Game
 {
 public:
@@ -23,13 +23,12 @@ protected:
 
 //test
 private:
-	// Command Architecture Systems
-	dx3d::commandHandler m_commandHandler;
-	std::unordered_map<uint64_t, SphereObj*> m_sphereRegistry;
-	uint64_t m_nextCommandId = 0;
+	// stuff for command handler and command inputs
+	commandHandler m_commandHandler;// the handler
+	std::unordered_map<uint64_t, SphereObj*> m_sphereRegistry; // orbs registry in unordered map for easy 
+	uint64_t m_nextCommandId = 0; // id num
 
 private:
-	std::vector<SphereObj*> m_spawnedSpheres{};
 
 	
 
@@ -38,7 +37,7 @@ private:
 
 };
 
-/// all commands here
+
 
 
 

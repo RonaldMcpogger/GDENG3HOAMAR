@@ -10,6 +10,7 @@ MainGame::MainGame(const dx3d::GameDesc& desc) : dx3d::Game(desc)
 
 void MainGame::onCreate() // crewate world 
 {
+	srand((unsigned int)time(NULL));
 	Game::onCreate();
 	auto& world = getWorld();
 
@@ -27,8 +28,8 @@ void MainGame::onCreate() // crewate world
 	auto player = world.createGameObject<Player>();
 	player->getTransform().setPosition({ 0, 1, -2});
 
-	//sphere object
-	 auto sphere = world.createGameObject<SphereObj>();
+	
+	
 
 
 	//set reference
@@ -43,7 +44,10 @@ void MainGame::onUpdate(dx3d::f32 deltaTime)
 	auto& input = getInputSystem();
 	auto& world = getWorld();
 
-	// 1. SPACEBAR INPUT -> Fire Spawn Command
+	// inputs for the command/ kill
+
+
+
 	if (input.isKeyPressed(dx3d::KeyCode::Space))
 	{
 		m_commandHandler.executeCommand(
@@ -51,29 +55,34 @@ void MainGame::onUpdate(dx3d::f32 deltaTime)
 		);
 	}
 
-	// 2. BACKSPACE INPUT -> Fire Undo Transaction 
+	
 	if (input.isKeyPressed(dx3d::KeyCode::Backspace))
+	{
+		m_commandHandler.executeCommand(std::make_unique<dx3d::DestroyRecentSphereCommand>(world, m_sphereRegistry, m_nextCommandId--)
+		);
+	}
+	if (input.isKeyPressed(dx3d::KeyCode::Z))
 	{
 		m_commandHandler.undo();
 	}
 
-	// 3. DELETE INPUT -> Wipe active layout safely
+	if (input.isKeyPressed(dx3d::KeyCode::P))
+	{
+		m_commandHandler.redo();
+	}
+
+	
 	if (input.isKeyPressed(dx3d::KeyCode::Delete))
 	{
-		// Safely clear objects that are currently tracked as alive
-		for (auto& [id, spherePtr] : m_sphereRegistry)
-		{
-			if (spherePtr)
-			{
-				world.destroyGameObject(*spherePtr);
-			}
-		}
+		
+		m_commandHandler.executeCommand(
+			std::make_unique<dx3d::DeleteAllSpheresCommand>(world, m_sphereRegistry)
+		);
 
-		// Flush our pointer maps completely 
-		m_sphereRegistry.clear();
+		 
+	
 
-		// Clear history so old actions don't attempt to undo non-existent components
-		m_commandHandler.clearHistory();
+	
 	}
 	
 }

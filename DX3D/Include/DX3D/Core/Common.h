@@ -96,7 +96,7 @@ namespace dx3d
 	// game settings
 	struct GameDesc
 	{
-		Rect windowSize{ 1280,720 };
+		Rect windowSize{ 1024,768 };
 		Logger::LogLevel logLevel = Logger::LogLevel::Error;
 	};
 

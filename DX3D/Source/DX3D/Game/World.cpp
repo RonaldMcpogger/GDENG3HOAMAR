@@ -39,13 +39,13 @@ void dx3d::World::update(f32 deltaTime)
 			///
 			else if (e.eventType == EventType::Destroy)
 			{
-				// REAL CLEANUP HAPPENS HERE SAFELY
+				
 				GameObject* objPtr = e.object;
 				if (!objPtr) continue;
 
 				objPtr->onDestroy();
 
-				// 1. Remove components
+				//Remove components
 				for (auto& [typeId, componentList] : m_components)
 				{
 					std::erase_if(componentList, [objPtr](Component* component) {
@@ -53,12 +53,12 @@ void dx3d::World::update(f32 deltaTime)
 						});
 				}
 
-				// 2. Remove dirty transforms
+				//Remove dirty transforms
 				std::erase_if(m_dirtyTransforms, [objPtr](TransformComponent* transform) {
 					return &transform->getGameObject() == objPtr;
 					});
 
-				// 3. Erase from active objects map
+				//Erase from active objects map
 				auto objectsIt = m_objects.find(objTypeId);
 				if (objectsIt != m_objects.end())
 				{
