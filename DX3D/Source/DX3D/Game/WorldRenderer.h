@@ -36,6 +36,12 @@ namespace dx3d
 		GraphicsDevice& m_graphicsDevice;
 		RefPtr<DeviceContext> m_deviceContext{};
 		RefPtr<GraphicsPipelineState> m_pipeline{};
+	
+		/// <summary>
+		///  buffers of each object need to find way to refactor where each rendercompnent has its own vb to pass through later
+		/// 
+		/// 
+		/// </summary>
 		RefPtr<VertexBuffer> m_vb{};
 		RefPtr<ConstantBuffer> m_cb{};
 		RefPtr<IndexBuffer> m_ib{};
@@ -44,6 +50,8 @@ namespace dx3d
 
 		RefPtr<VertexBuffer> m_speVb{};
 		RefPtr<IndexBuffer> m_speIb{};
+
+		RefPtr<VertexBuffer> m_planeVb{};
+		RefPtr<IndexBuffer> m_planeIb{};
 	};
 }
-

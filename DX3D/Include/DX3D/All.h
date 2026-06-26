@@ -1,16 +1,20 @@
-// all of the headers?
+// headers needed for Game folder to reference and get stuff from dx3d
 #pragma once
 
 
 #include <DX3D/Game/Component.h>
+
+
 //componenst
 #include <DX3D/Component/TransformComponent.h>
 #include <DX3D/Component/CubeComponent.h>
-
+#include <DX3D/Component/PlaneComponent.h>
 
 
 #include <DX3D/Component/CameraComponent.h>
 #include <DX3D/Component/CircleComponent.h>
+
+
 //game objects and game
 #include <DX3D/Game/GameObject.h>
 #include <DX3D/Game/World.h>

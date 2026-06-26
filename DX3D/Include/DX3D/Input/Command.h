@@ -5,11 +5,15 @@
 #include <unordered_map>
 #include <vector>
 
-// Forward declaration of SphereObj (since it is outside dx3d namespace)
 
 
 // unordered maps to put id and sphere together in order to track recently called spheres
+// 
+// 
+// Forward declaration of SphereObj (since it is outside dx3d namespace)
+
 class SphereObj;
+class CubeObj;
 
 namespace dx3d // Base Commadn
 {
@@ -24,13 +28,6 @@ namespace dx3d // Base Commadn
 
 
     /// ALL THE COMMANDS BELOW
-
-
-
-
-
-
-
 
     // SPAWN THE SPEre
 
@@ -47,7 +44,7 @@ namespace dx3d // Base Commadn
         uint64_t m_targetId;
     };
 
-    //DESTROY THE SPHERE recently spawneds
+    //DESTROY THE SPHERE recently spawneds may need to refactor theses stuff to delete undo or delete all gameobjects 
 
     class DestroyRecentSphereCommand : public Command
     {
@@ -82,4 +79,26 @@ namespace dx3d // Base Commadn
         std::unordered_map<uint64_t, SphereObj*>& m_registry;
         std::vector<SavedSphereData> m_savedSpheres;
     };
+
+
+    // SpawnCube
+
+    class SpawnCube : public Command
+    {
+    public:
+        SpawnCube(dx3d::World& world, std::unordered_map<uint64_t, CubeObj*>& registry, uint64_t targetId);
+        virtual void execute() override;
+        virtual void undo() override;
+
+
+    private:
+        dx3d::World& m_world;
+        std::unordered_map<uint64_t, CubeObj*>& m_registry;
+        uint64_t m_targetId;
+    };
+
+
+
+
+
 }

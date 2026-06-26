@@ -11,11 +11,16 @@
 #include <DX3D/Game/Component.h>
 #include <DX3D/Game/GameObject.h>
 
+//components
+
 #include <DX3D/Component/TransformComponent.h>
 #include <DX3D/Component/CubeComponent.h>
 #include <DX3D/Component/CameraComponent.h>
-//testing circle component
+
 #include <DX3D/Component/CircleComponent.h>
+#include <DX3D/Component/PlaneComponent.h>
+// math utils
+
 #include <DX3D/Math/MathUtils.h>
 #include <DX3D/Math/Vec4.h>
 
@@ -91,7 +96,7 @@ dx3d::WorldRenderer::WorldRenderer(const WorldRendererDesc& desc): Base(desc.bas
 	m_ib = device.createIndexBuffer({indexList, std::size(indexList)});
 
 
-	//sphere test
+// creating spheres
 
 	std::vector<Vertex> speVerts;
 	std::vector<ui32> speIndices;
@@ -102,6 +107,26 @@ dx3d::WorldRenderer::WorldRenderer(const WorldRendererDesc& desc): Base(desc.bas
 		device.createVertexBuffer({ speVerts.data(),static_cast<ui32>(speVerts.size()),sizeof(Vertex) });
 
 	m_speIb= device.createIndexBuffer({ speIndices.data(), static_cast<ui32>(speIndices.size())});
+
+	const Vertex planeVertexList[] =
+	{
+		{{-0.5f, 0.0f, -0.5f}, {1, 1, 1, 1.0f}},
+		{{-0.5f, 0.0f,  0.5f}, {1, 1, 1, 1.0f}},
+		{{ 0.5f, 0.0f,  0.5f}, {1, 1, 1, 1.0f}},
+		{{ 0.5f, 0.0f, -0.5f}, {1, 1, 1, 1.0f}}
+	};
+
+	const ui32 planeIndexList[] =
+	{
+		0, 1, 2,
+		2, 3, 0
+	};
+
+	m_planeVb = device.createVertexBuffer({ planeVertexList, std::size(planeVertexList), sizeof(Vertex) });
+	m_planeIb = device.createIndexBuffer({ planeIndexList, std::size(planeIndexList) });
+
+
+
 }
 
 dx3d::WorldRenderer::~WorldRenderer()
@@ -136,7 +161,7 @@ void dx3d::WorldRenderer::render(const World& world, SwapChain& swapChain, f32 d
 
 
 	{
-		/// try to refactor this in a  seperate class
+		/// try to refactor this in a  seperate class or method of refactoring these primitives as to not constantly copy and paste this same for loop for every primitive component
 		auto components = world.getComponents<CubeComponent>(numComponents);
 
 		for (auto i : std::views::iota(0u, numComponents))
@@ -180,7 +205,26 @@ void dx3d::WorldRenderer::render(const World& world, SwapChain& swapChain, f32 d
 	}
 
 
+	{
+		auto components = world.getComponents<PlaneComponent>(numComponents);
+		for (auto i : std::views::iota(0u, numComponents))
+		{
+			auto component = components[i];
+			auto& transform = component->getGameObject().getTransform();
 
+			data.world = transform.getAffineWorldMatrix();
+
+			auto& cb = *m_cb;
+			context.updateConstantBuffer(cb, &data);
+
+			auto& vb = *m_planeVb;
+			auto& ib = *m_planeIb;
+			context.setVertexBuffer(vb);
+			context.setConstantBuffer(cb);
+			context.setIndexBuffer(ib);
+			context.drawIndexedTriangleList(ib.getIndexListSize(), 0u, 0u);
+		}
+	}
 
 
 	m_graphicsDevice.executeCommandList(context);

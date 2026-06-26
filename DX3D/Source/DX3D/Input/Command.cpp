@@ -1,6 +1,10 @@
 #include <DX3D/Input/Command.h>
 #include <DX3D/Game/World.h>
 #include <DX3D/Game/GameObject.h>
+
+/// Objects to spawn specific objects
+#include "../../Game/Objects/CubeObj.h"
+
 #include "../../Game/Objects/SphereObj.h"
 
 
@@ -104,6 +108,35 @@ namespace dx3d
                 sphere->getTransform().setPosition({ sphereData.x, sphereData.y, sphereData.z });
                 m_registry[sphereData.id] = sphere;
             }
+        }
+    }
+
+
+
+    SpawnCube::SpawnCube(dx3d::World& world, std::unordered_map<uint64_t, CubeObj*>& registry, uint64_t targetId)
+        : m_world(world), m_registry(registry), m_targetId(targetId)
+    {
+    }
+    void SpawnCube::execute()
+    {
+        // spawn the sphere via world then add it to the registry including the ID
+        auto* Cube = m_world.createGameObject<CubeObj>();
+        if (Cube)
+        {
+            m_registry[m_targetId] = Cube;
+        }
+    }
+
+    void SpawnCube::undo() // destroys the object and remove from registry
+    {
+        auto it = m_registry.find(m_targetId);
+        if (it != m_registry.end())
+        {
+            if (it->second)
+            {
+                m_world.destroyGameObject(*(it->second));
+            }
+            m_registry.erase(it);
         }
     }
 }

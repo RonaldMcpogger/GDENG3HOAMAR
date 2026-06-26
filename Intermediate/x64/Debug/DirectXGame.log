@@ -1,2 +1,5 @@
-﻿  MainGame.cpp
+﻿  Player.cpp
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\Player.cpp(43,57): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\Player.cpp(44,57): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\Player.cpp(64,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   DirectXGame.vcxproj -> C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Bin\x64\Debug\RAMENGINETEST.exe

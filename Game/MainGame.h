@@ -9,7 +9,7 @@
 
 
 class SphereObj;
-
+class CubeObj;
 
 // main game loop 
 class MainGame : public dx3d::Game
@@ -25,7 +25,12 @@ protected:
 private:
 	// stuff for command handler and command inputs
 	commandHandler m_commandHandler;// the handler
-	std::unordered_map<uint64_t, SphereObj*> m_sphereRegistry; // orbs registry in unordered map for easy 
+	std::unordered_map<uint64_t, SphereObj*> m_sphereRegistry; // orbs registry in unordered map for easy track
+
+	//testing 
+
+	std::unordered_map<uint64_t, CubeObj*> m_CubeRegistry;
+
 	uint64_t m_nextCommandId = 0; // id num
 
 private:

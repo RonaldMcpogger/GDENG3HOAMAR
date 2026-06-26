@@ -9,6 +9,7 @@ class SphereObj : public dx3d::GameObject
 	public:
 		explicit SphereObj(const dx3d::GameObjectDesc& desc);
 		virtual ~SphereObj() override;
+		bool isMove = true;
 	protected:
 		virtual void onCreate();
 		virtual void onUpdate(dx3d::f32 deltaTime);

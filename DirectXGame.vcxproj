@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\Objects\CubeObj.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Input\Command.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Input\commandHandler.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Component\CircleComponent.cpp" />
@@ -167,8 +168,11 @@
     <ClCompile Include="DX3D\Source\DX3D\Graphics\VertexShaderSignature.cpp" />
     <ClCompile Include="Game\MainGame.cpp" />
     <ClCompile Include="Game\Objects\SphereObj.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Component\PlaneComponent.cpp" />
+    <ClCompile Include="Game\Objects\PlaneObj.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game\Objects\CubeObj.h" />
     <ClInclude Include="DX3D\Include\DX3D\Input\commandHandler.h" />
     <ClInclude Include="DX3D\Include\DX3D\Input\Command.h" />
     <ClInclude Include="DX3D\Include\DX3D\Component\CircleComponent.h" />
@@ -210,6 +214,8 @@
     <ClInclude Include="DX3D\Source\DX3D\Graphics\VertexShaderSignature.h" />
     <ClInclude Include="Game\MainGame.h" />
     <ClInclude Include="Game\Objects\SphereObj.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Component\PlaneComponent.h" />
+    <ClInclude Include="Game\Objects\PlaneObj.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

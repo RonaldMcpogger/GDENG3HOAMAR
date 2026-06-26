@@ -1,3 +1,4 @@
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\CubeObj.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\CubeObj.obj
 C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\DX3D\Source\DX3D\Input\Command.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\Command.obj
 C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\DX3D\Source\DX3D\Input\commandHandler.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\commandHandler.obj
 C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\DX3D\Source\DX3D\Component\CircleComponent.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\CircleComponent.obj
@@ -28,3 +29,5 @@ C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\DX3D\Source\DX3D\Graphics
 C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\DX3D\Source\DX3D\Graphics\VertexShaderSignature.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\VertexShaderSignature.obj
 C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\MainGame.obj
 C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\SphereObj.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\SphereObj.obj
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\DX3D\Source\DX3D\Component\PlaneComponent.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\PlaneComponent.obj
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\PlaneObj.cpp;C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Intermediate\x64\Debug\PlaneObj.obj
