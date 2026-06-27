@@ -1,5 +1,33 @@
-﻿  Player.cpp
-C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\Player.cpp(43,57): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\Player.cpp(44,57): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\Objects\Player.cpp(64,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  MainGame.cpp
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(111,48): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(111,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(115,48): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(115,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(119,46): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(123,45): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(123,40): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(127,45): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(127,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(131,44): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(131,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(134,51): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(135,46): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(135,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(136,51): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(137,45): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(137,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(142,47): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(142,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(146,46): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(146,41): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(149,47): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(149,42): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(153,46): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(153,42): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(156,52): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(157,46): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(160,47): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(160,42): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(163,46): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
+C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Game\MainGame.cpp(163,42): warning C4305: 'argument': truncation from 'double' to 'dx3d::f32'
   DirectXGame.vcxproj -> C:\Users\Rambutan\Downloads\RAMENGINETEST\GDENG3HOAMAR\Bin\x64\Debug\RAMENGINETEST.exe

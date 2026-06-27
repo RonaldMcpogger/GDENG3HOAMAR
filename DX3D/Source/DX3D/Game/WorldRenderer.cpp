@@ -161,7 +161,7 @@ void dx3d::WorldRenderer::render(const World& world, SwapChain& swapChain, f32 d
 
 
 	{
-		/// try to refactor this in a  seperate class or method of refactoring these primitives as to not constantly copy and paste this same for loop for every primitive component
+		
 		auto components = world.getComponents<CubeComponent>(numComponents);
 
 		for (auto i : std::views::iota(0u, numComponents))

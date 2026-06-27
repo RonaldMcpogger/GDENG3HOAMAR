@@ -13,5 +13,5 @@ protected:
 	virtual void onDestroy();
 
 private:
-
+	bool rev=false;
 };
